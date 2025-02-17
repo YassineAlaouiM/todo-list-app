@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Listify</title>
+</head>
+<body>
+    <div class="sidebar">
+        <div class="sidebar-top">
+            <div class="profile-notification">
+                <div class="profile">
+                    <i id="user" class="fa-solid fa-circle-user"></i>
+                    <h3 id="name">Yassine</h3>
+                    <i class="fa-solid fa-angle-down"></i>
+                </div>
+                <div class="notification">
+                    <i class="fa-regular fa-bell"></i>
+                    <i id="menu-icon" class="fa-solid fa-bars" onclick="showHideMenu()"></i>
+                </div>
+            </div>
+    
+            <div class="menu">
+                <button id="add-task" onclick="showSection('tasks')">
+                    <i class="fa-solid fa-circle-plus"></i>
+                    <h3>Add Task</h3>
+                </button>
+                <button id="search" onclick="showSection('search')">
+                    <i class="fa-solid fa-search"></i>
+                    <h3>Seach</h3>
+                </button>
+                <button id="today" onclick="showSection('today')">
+                    <i class="fa-regular fa-calendar"></i>
+                    <h3>Today</h3>
+                </button>
+            </div>
+    
+            <div>
+                <button id="categories" onclick="showSection('categories')">
+                    <h3 id="categories">Categories</h3>
+                    <div class="categories-plus">
+                        <i class="fa-solid fa-plus"></i>
+                        <i id="toggle-arrow" class="fa-solid fa-angle-down" onclick="toggleCategories(event)"></i>
+                    </div>
+                </button> 
+                <div id="menu-category-container">
+                    <ul id="menu-category-list"></ul>
+                </div>  
+            </div>
+        </div>
+
+
+        <div class="sidebar-bottom">
+            <button id="archive" onclick="showSection('archive')">
+                <i class="fa-solid fa-box-archive"></i>
+                <h3>Archive</h3>
+            </button>
+            <button id="settings" onclick="showSection('settings')">
+                <i class="fa-solid fa-cog"></i>
+                <h3>Settings</h3>
+            </button>
+        </div>
+    </div>
+
+    <div class="main-content" id="main-content">
+        <h1>To-Do List</h1>
+        <div class="input-container">
+            <div class="input">
+                <input type="text" id="task-input" placeholder="Add a task...">
+                <select id="category-select"></select>
+            </div>
+            <button class="add-task" onclick="addTask()">Add</button>
+        </div>
+        <ul id="task-list"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
